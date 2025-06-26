@@ -1,0 +1,31 @@
+spring:
+  datasource:
+    db0:
+      jdbc-url: jdbc:mysql://localhost:3306/bms_01?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+      username: root
+      password: 123456
+      driver-class-name: com.mysql.cj.jdbc.Driver
+    db1:
+      jdbc-url: jdbc:mysql://localhost:3306/bms_02?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+      username: root
+      password: 123456
+      driver-class-name: com.mysql.cj.jdbc.Driver
+  redis:
+    host: localhost
+    port: 6379
+    database: 0
+    timeout: 30000
+
+rocketmq:
+  name-server: localhost:9876
+  producer:
+    group: signal-producer-group
+
+logging:
+  level:
+    com.xiaomi.cug.mapper: DEBUG  # 显示你项目中 mapper 包下的 SQL
+    org.mybatis: DEBUG            # 可选，显示 MyBatis 框架内部日志
+    java.sql: DEBUG               # 可选，显示 JDBC SQL 执行
+mybatis:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
